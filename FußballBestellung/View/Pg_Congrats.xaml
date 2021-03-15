@@ -15,7 +15,13 @@
             </Label.Foreground>
         </Label>
 
-        <StackPanel Margin="140,67,139,78" Orientation="Horizontal" Background="White">
+        <Label x:Name="lbl_SubTitle" Content="Glückwunsch" FontFamily="OCR A Extended" FontSize="32" FontWeight="Bold" Margin="392,61,180,347">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </Label.Foreground>
+        </Label>
+
+        <StackPanel Margin="192,108,180,59" Orientation="Horizontal" Background="White">
 
 
 
