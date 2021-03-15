@@ -21,11 +21,9 @@
             </Label.Foreground>
         </Label>
 
-        <StackPanel Margin="192,108,180,59" Orientation="Horizontal" Background="White">
-
-
-
-        </StackPanel>
+        <Canvas Margin="192,108,180,59" Background="White">
+            
+        </Canvas>
         <Canvas>
             <Button x:Name="Overview_btn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="Overview_btn_Cancel_Click"/>
         </Canvas>

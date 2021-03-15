@@ -22,16 +22,25 @@ namespace FußballBestellung
     {
 
         List<Football> cart = new List<Football>();
+        Customer Customer;
 
-        public Pg_Congrats(List<Football> cart)
+        public Pg_Congrats(List<Football> cart, Customer customer)
         {
             this.cart = cart;
+            this.Customer = customer;
             InitializeComponent();
+
+
         }
 
         private void Overview_btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Customer.FirstName);
         }
     }
 }
