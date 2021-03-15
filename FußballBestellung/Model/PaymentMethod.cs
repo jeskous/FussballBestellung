@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace FußballBestellung
 {
-    public class PaymentMethod
-    {
-        public PayPal Paypal { get; set; }
-        public BankAccount BankAccount { get; set; }
-
-    }
-
     public class PayPal
     {
         public string Mail { get; set; }

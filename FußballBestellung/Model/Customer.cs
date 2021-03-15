@@ -15,7 +15,8 @@ namespace FußballBestellung
         public int HouseNumber { get; set; }
         public int Postal { get; set; }
         public string City { get; set; }
-        public PaymentMethod PaymentMethod { get; set; }
+        public PayPal Paypal { get; set; }
+        public BankAccount BankAccount { get; set; }
 
         public Customer(string lastName, string firstName, int phone, string street, int houseNumber, int postal, string city)
         {

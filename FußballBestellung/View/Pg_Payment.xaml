@@ -22,7 +22,7 @@
         </Label>
 
         <Canvas Margin="192,108,180,59" Background="White">
-            <TabControl x:Name="TabCtrl_Payments" Height="283" Canvas.Left="107" Width="321" IsHitTestVisible="False"  >
+            <TabControl x:Name="TabCtrl_Payments" Height="283" Canvas.Left="107" Width="321">
                 <TabItem x:Name="TabItem_PayPal" Header="TabItem">
                     <Grid Background="#FFE5E5E5">
                         <Label x:Name="lbl_email" Content="E-Mail" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.91,1.39"/>

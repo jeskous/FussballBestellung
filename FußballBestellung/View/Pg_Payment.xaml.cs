@@ -39,16 +39,32 @@ namespace FußballBestellung
         {
             if ((bool)rb_PayPal.IsChecked)
             {
-                Customer.PaymentMethod.Paypal.Mail = tb_email.Text;
-                this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                if (tb_email.Text == "")
+                {
+                    MessageBox.Show("Kein Feld darf leer sein!");
+                }
+                else
+                {
+                    Customer.Paypal = new PayPal();
+                    Customer.Paypal.Mail = tb_email.Text;
+                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                }                
             }
             else if ((bool)rb_BankAccount.IsChecked)
             {
-                Customer.PaymentMethod.BankAccount.BIC = tb_BIC.Text;
-                Customer.PaymentMethod.BankAccount.IBAN = tb_IBAN.Text;
-                Customer.PaymentMethod.BankAccount.AccountName = tb_AccountName.Text;
+                if(tb_BIC.Text == "" || tb_IBAN.Text == "" || tb_AccountName.Text == "")
+                {
+                    MessageBox.Show("Kein Feld darf leer sein!");
+                }
+                else
+                {
+                    Customer.BankAccount = new BankAccount();
+                    Customer.BankAccount.BIC = tb_BIC.Text;
+                    Customer.BankAccount.IBAN = tb_IBAN.Text;
+                    Customer.BankAccount.AccountName = tb_AccountName.Text;
 
-                this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                }
             }
             else
             {
