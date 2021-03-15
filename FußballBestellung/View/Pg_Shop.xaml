@@ -36,8 +36,8 @@
         </StackPanel>
         <Canvas>
             <Button x:Name="ShopBtn_Submit" Content="Order"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" Click="ShopBtn_Submit_Click" FontFamily="OCR A Extended" />
-            <Button x:Name="ShopBtn_Next" Content="Next"  Width="71" Height="28" Canvas.Left="344" Canvas.Top="405" Click="ShopBtn_Next_Click" FontFamily="OCR A Extended" />
-            <Button x:Name="ShopBtn_Previous" Content="Previous"  Width="71" Height="28" Canvas.Left="268" Canvas.Top="405" Click="ShopBtn_Previous_Click" FontFamily="OCR A Extended" />
+            <Button x:Name="ShopBtn_Next" Content="Next"  Width="71" Height="28" Canvas.Left="350" Canvas.Top="360" Click="ShopBtn_Next_Click" FontFamily="OCR A Extended" />
+            <Button x:Name="ShopBtn_Previous" Content="Previous"  Width="71" Height="28" Canvas.Left="274" Canvas.Top="360" Click="ShopBtn_Previous_Click" FontFamily="OCR A Extended" />
         </Canvas>
     </Grid>
 </Page>
