@@ -9,6 +9,7 @@ namespace FußballBestellung
     public class PaymentMethod
     {
         public PayPal Paypal { get; set; }
+        public BankAccount BankAccount { get; set; }
 
     }
 

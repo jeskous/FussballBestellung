@@ -37,7 +37,24 @@ namespace FußballBestellung
 
         private void PaymentBtn_Submit_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+            if ((bool)rb_PayPal.IsChecked)
+            {
+                Customer.PaymentMethod.Paypal.Mail = tb_email.Text;
+                this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+            }
+            else if ((bool)rb_BankAccount.IsChecked)
+            {
+                Customer.PaymentMethod.BankAccount.BIC = tb_BIC.Text;
+                Customer.PaymentMethod.BankAccount.IBAN = tb_IBAN.Text;
+                Customer.PaymentMethod.BankAccount.AccountName = tb_AccountName.Text;
+
+                this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+            }
+            else
+            {
+                MessageBox.Show("Bitte Eine der Möglichen Zahlungsmethoden auswählen!");
+            }
+            
         }
 
         private void PaymentBtn_Cancel_Click(object sender, RoutedEventArgs e)

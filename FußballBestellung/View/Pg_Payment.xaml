@@ -24,10 +24,20 @@
         <Canvas Margin="192,108,180,59" Background="White">
             <TabControl x:Name="TabCtrl_Payments" Height="283" Canvas.Left="107" Width="321" IsHitTestVisible="False"  >
                 <TabItem x:Name="TabItem_PayPal" Header="TabItem">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <Label x:Name="lbl_email" Content="E-Mail" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.91,1.39"/>
+                        <TextBox x:Name="tb_email" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                    </Grid>
                 </TabItem>
                 <TabItem x:Name="TabItem_BankAccount" Header="TabItem">
-                    <Grid Background="#FFE5E5E5"/>
+                    <Grid Background="#FFE5E5E5">
+                        <Label x:Name="lbl_email_Copy" Content="BIC (Swift-Code)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.91,1.39"/>
+                        <TextBox x:Name="tb_BIC" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                        <Label x:Name="lbl_IBAN" Content="IBAN" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.91,1.39"/>
+                        <TextBox x:Name="tb_IBAN" HorizontalAlignment="Left" Height="23" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                        <Label x:Name="lbl_email_Copy2" Content="Kontoinhaber" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.91,1.39"/>
+                        <TextBox x:Name="tb_AccountName" HorizontalAlignment="Left" Height="23" Margin="10,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                    </Grid>
                 </TabItem>
             </TabControl>
             <RadioButton x:Name="rb_PayPal" Content="Paypal" Canvas.Left="5" Canvas.Top="29" Width="97" GroupName="Payments" IsChecked="true" Checked="rb_PayPal_Checked"/>

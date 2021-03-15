@@ -27,7 +27,7 @@
 
         </StackPanel>
         <Canvas>
-            <Button x:Name="Overview_btn_Submit" Content="Next"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" FontFamily="OCR A Extended" Click="Overview_btn_Submit_Click"/>
+            <Button x:Name="Overview_btn_Submit" Content="Bestellen"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" FontFamily="OCR A Extended" Click="Overview_btn_Submit_Click"/>
             <Button x:Name="Overview_btn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="Overview_btn_Cancel_Click"/>
         </Canvas>
     </Grid>
