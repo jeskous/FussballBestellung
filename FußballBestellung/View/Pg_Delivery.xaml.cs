@@ -53,7 +53,7 @@ namespace FußballBestellung
                 Customer customer = new Customer
                 (tb_LastName.Text,
                 tb_FirstName.Text,
-                Convert.ToInt32(tb_PhoneNumber.Text),
+                tb_PhoneNumber.Text,
                 tb_Street.Text,
                 Convert.ToInt32(tb_HouseNumber.Text),
                 Convert.ToInt32(tb_Postal.Text),

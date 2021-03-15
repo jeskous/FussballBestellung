@@ -29,6 +29,9 @@ namespace FußballBestellung
             this.cart = cart;
             this.Customer = customer;
             InitializeComponent();
+
+            displayCart();
+            displayCustomerInfo();
         }
 
         private void Overview_btn_Submit_Click(object sender, RoutedEventArgs e)
@@ -39,6 +42,39 @@ namespace FußballBestellung
         private void Overview_btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
+        }
+
+        //
+        // Helper
+        //
+
+        void displayCustomerInfo()
+        {
+            lbl_FirstName_Value.Content = Customer.FirstName;
+            lbl_LastName_Value.Content = Customer.LastName;
+            lbl_Phone_Value.Content = Customer.Phone;
+            lbl_Street_Value.Content = Customer.Street;
+            lbl_HouseNumber_Value.Content = Customer.HouseNumber;
+            lbl_Postal_Value.Content = Customer.Postal;
+            lbl_City_Value.Content = Customer.City;
+            if(Customer.chosenPayment == "PayPal")
+            {
+                lbl_PaymentMethod_Value.Content = Customer.Paypal.MethodName;
+            }
+            else
+            {
+                lbl_PaymentMethod_Value.Content = Customer.BankAccount.MethodName;
+            }
+        }
+        void displayCart()
+        {
+            string list = "";
+            foreach (var item in cart)
+            {
+                list += item.Name + Environment.NewLine;
+            }
+
+            tb_cart.Text = list;
         }
     }
 }

@@ -21,11 +21,33 @@
             </Label.Foreground>
         </Label>
 
-        <StackPanel Margin="192,108,180,59" Orientation="Horizontal" Background="White">
+        <Canvas Margin="192,108,180,59" Background="White">
+            <Label Content="Name" Canvas.Left="6" Canvas.Top="5" />
+            <Label Content="Vorname" Canvas.Left="6" Canvas.Top="66"/>
+            <Label Content="Straße" Canvas.Left="6" Canvas.Top="132"/>
+            <Label Content="Hausnummer" Canvas.Left="140" Canvas.Top="132" Width="80"/>
+            <Label Content="Postleitzahl" Canvas.Left="6" Canvas.Top="189"/>
+            <Label Content="Stadt" Canvas.Left="81" Canvas.Top="189" Width="80"/>
+            <Label Content="Telefonnummer" Canvas.Left="140" Canvas.Top="66"/>
+            <Label x:Name="lbl_LastName_Value" Content="lbl_Name_Value" Canvas.Left="7" Canvas.Top="31" Width="213"/>
+            <Label x:Name="lbl_FirstName_Value" Content="Vorname" Canvas.Left="7" Canvas.Top="92" Width="128"/>
+            <Label x:Name="lbl_Phone_Value" Content="Telefonnummer" Canvas.Left="140" Canvas.Top="92"/>
+            <Label x:Name="lbl_Street_Value" Content="Straße" Canvas.Left="7" Canvas.Top="158" Width="128"/>
+            <Label x:Name="lbl_HouseNumber_Value" Content="Hausnummer" Canvas.Left="140" Canvas.Top="158" Width="80"/>
+            <Label x:Name="lbl_Postal_Value" Content="Postleitzahl" Canvas.Left="6" Canvas.Top="215"/>
+            <Label x:Name="lbl_City_Value" Content="Stadt" Canvas.Left="81" Canvas.Top="215" Width="139"/>
+            <StackPanel Background="White" Canvas.Left="283" Canvas.Top="2" Height="281">
+                <ListBox HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">
+                    <Label Content="Warenkorb:" FontFamily="OCR A Extended"></Label>
+                </ListBox>
+                <TextBox x:Name="tb_cart" Height="242" TextWrapping="Wrap" Text=""/>
+            </StackPanel>
+            <Separator Width="227" Height="14" Canvas.Left="6" Margin="0" Canvas.Top="118"></Separator>
+            <Separator Width="227" Height="14" Canvas.Left="6" Margin="0" Canvas.Top="241"/>
+            <Label x:Name="lbl_Postal_Value_Copy" Content="Zahlungsmethode:" Canvas.Left="6" Canvas.Top="255"/>
+            <Label x:Name="lbl_PaymentMethod_Value" Content="zahlungsmethode" Canvas.Left="120" Canvas.Top="255" Width="139"/>
 
-
-
-        </StackPanel>
+        </Canvas>
         <Canvas>
             <Button x:Name="Overview_btn_Submit" Content="Bestellen"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" FontFamily="OCR A Extended" Click="Overview_btn_Submit_Click"/>
             <Button x:Name="Overview_btn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="Overview_btn_Cancel_Click"/>

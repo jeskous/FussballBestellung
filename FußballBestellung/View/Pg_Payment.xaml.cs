@@ -47,6 +47,11 @@ namespace FußballBestellung
                 {
                     Customer.Paypal = new PayPal();
                     Customer.Paypal.Mail = tb_email.Text;
+
+
+                    //ToDo eventuell verschönern und in klassen einbauen
+                    Customer.chosenPayment = "PayPal";
+
                     this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
                 }                
             }
@@ -62,6 +67,9 @@ namespace FußballBestellung
                     Customer.BankAccount.BIC = tb_BIC.Text;
                     Customer.BankAccount.IBAN = tb_IBAN.Text;
                     Customer.BankAccount.AccountName = tb_AccountName.Text;
+
+                    //ToDo eventuell verschönern und in klassen einbauen
+                    Customer.chosenPayment = "Bank Account";
 
                     this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
                 }
