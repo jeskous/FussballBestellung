@@ -29,7 +29,7 @@ namespace FußballBestellung
         List<Football> footballs = new List<Football>();
         List<Football> cart = new List<Football>();
         int footballListCounter = 0;
-
+        double totalPrice = 0;
         public Pg_Shop()
         {
             InitializeComponent();
@@ -48,21 +48,28 @@ namespace FußballBestellung
 
         private void ShopBtn_Submit_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pg_Delivery(cart));
+            this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
         }
 
         private void ShopBtn_Add_Click(object sender, RoutedEventArgs e)
         {
             cart.Add(footballs[footballListCounter]);
             lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
+            totalPrice += footballs[footballListCounter].Price;
             displayCart();
+            updateTotalPrice();
         }
 
         private void ShopBtn_Remove_Click(object sender, RoutedEventArgs e)
         {
-            cart.Remove(footballs[footballListCounter]);
-            lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
-            displayCart();
+            if (cart.Count > 0 && cart.Contains(footballs[footballListCounter]))
+            {
+                cart.Remove(footballs[footballListCounter]);
+                lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
+                totalPrice -= footballs[footballListCounter].Price;
+                displayCart();
+                updateTotalPrice();
+            }
         }
 
         private void ShopBtn_Next_Click(object sender, RoutedEventArgs e)
@@ -89,6 +96,11 @@ namespace FußballBestellung
         //
         //Helper
         //
+
+        void updateTotalPrice()
+        {
+            lbl_Cart_Price_Value.Content = $"{totalPrice.ToString("C2")}";
+        }
 
         void fillShopLabels(Football football)
         {

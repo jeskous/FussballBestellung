@@ -15,17 +15,14 @@
             </Label.Foreground>
         </Label>
 
-        <Label x:Name="lbl_SubTitle" Content="Glückwunsch" FontFamily="OCR A Extended" FontSize="32" FontWeight="Bold" Margin="392,61,180,347">
+        <Label x:Name="lbl_SubTitle" Content="Glückwunsch" FontFamily="OCR A Extended" FontSize="32" FontWeight="Bold" Margin="224,153,348,255">
             <Label.Foreground>
                 <SolidColorBrush Color="Black"/>
             </Label.Foreground>
         </Label>
-
-        <Canvas Margin="192,108,180,59" Background="White">
-            
-        </Canvas>
         <Canvas>
             <Button x:Name="Overview_btn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="Overview_btn_Cancel_Click"/>
         </Canvas>
+        <Label x:Name="lbl_SubTitle_Copy" Content="Ihre Bestellung wurde abgesendet" FontFamily="OCR A Extended" FontSize="24" FontWeight="Bold" Margin="168,195,152,213" Foreground="Black"/>
     </Grid>
 </Page>

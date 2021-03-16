@@ -23,11 +23,13 @@ namespace FußballBestellung
 
         List<Football> cart = new List<Football>();
         Customer Customer;
+        double TotalPrice;
 
-        public Pg_Overview(List<Football> cart, Customer customer)
+        public Pg_Overview(List<Football> cart, Customer customer, double totalPrice)
         {
             this.cart = cart;
             this.Customer = customer;
+            this.TotalPrice = totalPrice;
             InitializeComponent();
 
             displayCart();
@@ -73,8 +75,8 @@ namespace FußballBestellung
             {
                 list += item.Name + Environment.NewLine;
             }
-
             tb_cart.Text = list;
+            lbl_Cart_Price_Value.Content = $"{TotalPrice.ToString("C2")}";
         }
     }
 }

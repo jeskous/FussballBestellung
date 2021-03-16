@@ -22,11 +22,13 @@ namespace FußballBestellung
     {
         List<Football> cart = new List<Football>();
         Customer Customer;
+        double TotalPrice;
 
-        public Pg_Payment(List<Football> cart, Customer customer)
+        public Pg_Payment(List<Football> cart, Customer customer, double totalPrice)
         {
             this.cart = cart;
             this.Customer = customer;
+            this.TotalPrice = totalPrice;
             InitializeComponent();
 
             //Hide TabCtrl Header
@@ -52,7 +54,7 @@ namespace FußballBestellung
                     //ToDo eventuell verschönern und in klassen einbauen
                     Customer.chosenPayment = "PayPal";
 
-                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer, TotalPrice));
                 }                
             }
             else if ((bool)rb_BankAccount.IsChecked)
@@ -71,7 +73,7 @@ namespace FußballBestellung
                     //ToDo eventuell verschönern und in klassen einbauen
                     Customer.chosenPayment = "Bank Account";
 
-                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer));
+                    this.NavigationService.Navigate(new Pg_Overview(cart, Customer, TotalPrice));
                 }
             }
             else

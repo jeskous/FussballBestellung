@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FußballBestellung"
         WindowStartupLocation="CenterScreen"    
         mc:Ignorable="d"
-        Title="MainWindow" Loaded="Window_Loaded" Width="817" Height="490">
+        Title="MainWindow" Loaded="Window_Loaded" Width="816" Height="488">
     <Grid>
         <Frame NavigationUIVisibility="Hidden" x:Name="myFrame" Width="auto" Height="auto" Background="yellow"></Frame>
     </Grid>

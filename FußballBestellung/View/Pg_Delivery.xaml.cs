@@ -23,9 +23,11 @@ namespace FußballBestellung
     {
 
         List<Football> cart = new List<Football>();
+        double TotalPrice;
 
-        public Pg_Delivery(List<Football> cart)
+        public Pg_Delivery(List<Football> cart, double totalPrice)
         {
+            this.TotalPrice = totalPrice;
             this.cart = cart;
 
             InitializeComponent();
@@ -59,7 +61,7 @@ namespace FußballBestellung
                 Convert.ToInt32(tb_Postal.Text),
                 tb_City.Text);
 
-                this.NavigationService.Navigate(new Pg_Payment(cart, customer));
+                this.NavigationService.Navigate(new Pg_Payment(cart, customer, TotalPrice));
             }
         }
 
