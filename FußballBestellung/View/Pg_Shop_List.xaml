@@ -1,0 +1,69 @@
+﻿<Page x:Class="FußballBestellung.Pg_Shop_List"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Pg_Shop_List">
+
+    <Grid Background="#FFB8B8B8">
+
+        <Label x:Name="lbl_title" Content="MyShop" FontFamily="OCR A Extended" FontSize="48" FontWeight="Bold">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </Label.Foreground>
+        </Label>
+        <StackPanel Margin="10,87,581,58" Background="White">
+            <ListBox HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">
+                <Label Content="Warenkorb:" FontFamily="OCR A Extended"></Label>
+            </ListBox>
+            <TextBox x:Name="tb_cart" Height="230" TextWrapping="Wrap" Text="" IsReadOnly="True"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Preis: " Height="36" FontFamily="OCR A Extended" FontSize="16"/>
+                <Label x:Name="lbl_Cart_Price_Value" Content="" Height="36" Width="130" FontFamily="OCR A Extended" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+        <ListView x:Name="CustomItems" Margin="269,87,10,58">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="80" Width="500">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="Img_listBox" Grid.Column="0" Source=""/>
+                        <TextBlock Text="Ball" Foreground="Black" FontSize="14" Grid.Column="1" VerticalAlignment="center" Height="20" Margin="0,30" />
+                        <TextBlock Text="Marke" Foreground="Black" FontSize="14" Grid.Column="2" VerticalAlignment="center" Height="20" Margin="0,30" />
+                        <Button Grid.Column="3" Width="auto" Margin="0,5,0,45" Content="+1"/>
+                        <Button Grid.Column="3" Width="auto"  Content="-1" Margin="0,45,0,5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <StackPanel Margin="269,87,10,58" Orientation="Horizontal" Background="White" Visibility="Hidden">
+            <StackPanel>
+                <Image x:Name="img_productImage"  Height="273" Margin="0,0,50,0"></Image>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="242">
+                <Label x:Name="lbl_Brand" Content="brand" Margin="0,20,0,0" FontSize="20" FontFamily="OCR A Extended" FontWeight="Bold"/>
+                <Label x:Name="lbl_Name" Content="name" Margin="0,0,0,20" FontFamily="OCR A Extended" FontSize="14"/>
+                <Label x:Name="lbl_Price" Content="price" Margin="0,0,0,15" FontSize="24" FontFamily="OCR A Extended"/>
+
+                <Button x:Name="ShopBtn_Add" Content="Add +1" Height="30" Margin="50,30,50,0" Click="ShopBtn_Add_Click" FontFamily="OCR A Extended"></Button>
+                <Button x:Name="ShopBtn_Remove" Content="Remove -1" Height="30" Margin="50,10,50,0" Click="ShopBtn_Remove_Click" FontFamily="OCR A Extended"></Button>
+                <Label x:Name="lbl_ItemsInCart" Content="Items in Cart:" FontSize="20" Margin="0,0,0,10" FontFamily="OCR A Extended"/>
+            </StackPanel>
+
+        </StackPanel>
+        <Canvas>
+            <Button x:Name="ShopBtn_Submit" Content="Order"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" Click="ShopBtn_Submit_Click" FontFamily="OCR A Extended" />
+            <Button x:Name="ShopBtn_Next" Content="Next"  Width="71" Height="28" Canvas.Left="344" Canvas.Top="397" Click="ShopBtn_Next_Click" FontFamily="OCR A Extended" />
+            <Button x:Name="ShopBtn_Previous" Content="Previous"  Width="71" Height="28" Canvas.Left="268" Canvas.Top="397" Click="ShopBtn_Previous_Click" FontFamily="OCR A Extended" />
+        </Canvas>
+    </Grid>
+</Page>

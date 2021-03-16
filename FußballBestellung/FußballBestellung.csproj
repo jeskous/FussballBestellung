@@ -72,6 +72,9 @@
     <Compile Include="View\Pg_Shop.xaml.cs">
       <DependentUpon>Pg_Shop.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pg_Shop_List.xaml.cs">
+      <DependentUpon>Pg_Shop_List.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pg_Shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pg_Shop_List.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
