@@ -28,7 +28,7 @@ namespace FußballBestellung
 
         List<Football> footballs = new List<Football>();
         List<Football> cart = new List<Football>();
-        int footballListCounter = 0;
+        List<Football> shopItems;
         double totalPrice = 0;
         public Pg_Shop_List()
         {
@@ -43,63 +43,49 @@ namespace FußballBestellung
             football4 = new Football("Senzor Lightball", 5, "Erima", 14.97, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/Senzor Lightball 350 Gramm.png");
             footballs.Add(football4);
 
-            fillShopLabels(footballs[0]);
-            CustomItems.Items.Add(addListBoxItem());
 
+            shopItems = new List<Football>();
+            foreach(var item in footballs)
+            {
+                shopItems.Add(new Football() { Name = item.Name, Brand = item.Brand, Price = item.Price, ImagePath = item.ImagePath });
+            }
+
+            CustomItems.ItemsSource = shopItems;
 
         }
 
-        ListBoxItem addListBoxItem()
-        {
-            var ListBoxItem = new ListBoxItem();
-
-            return ListBoxItem;
-        }
-
-        private void ShopBtn_Submit_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
-        }
+        //
+        // Form Methods
+        //
 
         private void ShopBtn_Add_Click(object sender, RoutedEventArgs e)
         {
-            cart.Add(footballs[footballListCounter]);
-            lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
-            totalPrice += footballs[footballListCounter].Price;
+            //ToDo getSelected Football as index
+            cart.Add(footballs[0]);
+            totalPrice += footballs[0].Price;
             displayCart();
             updateTotalPrice();
         }
-
         private void ShopBtn_Remove_Click(object sender, RoutedEventArgs e)
         {
-            if (cart.Count > 0 && cart.Contains(footballs[footballListCounter]))
-            {
-                cart.Remove(footballs[footballListCounter]);
-                lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
-                totalPrice -= footballs[footballListCounter].Price;
-                displayCart();
-                updateTotalPrice();
-            }
-        }
-
-        private void ShopBtn_Next_Click(object sender, RoutedEventArgs e)
-        {
-            footballListCounter++;
-            checkCountRange();
-            fillShopLabels(footballs[footballListCounter]);
-        }
-
-        private void ShopBtn_Previous_Click(object sender, RoutedEventArgs e)
-        {
-            footballListCounter--;
-            checkCountRange();
-            fillShopLabels(footballs[footballListCounter]);
+            //if (cart.Count > 0 && cart.Contains(footballs[footballListCounter]))
+            //{
+            //    var x = getSelectedItem();
+            //    cart.Remove(footballs[footballListCounter]);
+            //    lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
+            //    totalPrice -= footballs[footballListCounter].Price;
+            //    displayCart();
+            //    updateTotalPrice();
+            //}
         }
 
         //
         //Navigation
         //
-
+        private void ShopBtn_Submit_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
+        }
 
 
 
@@ -107,17 +93,16 @@ namespace FußballBestellung
         //Helper
         //
 
+
+        ListBoxItem addListBoxItem()
+        {
+            var ListBoxItem = new ListBoxItem();
+
+            return ListBoxItem;
+        }
         void updateTotalPrice()
         {
             lbl_Cart_Price_Value.Content = $"{totalPrice.ToString("C2")}";
-        }
-
-        void fillShopLabels(Football football)
-        {
-            lbl_Brand.Content = football.Brand;
-            lbl_Name.Content = football.Name;
-            lbl_Price.Content = $"{football.Price.ToString("C2")}";
-            img_productImage.Source = new BitmapImage(new Uri(football.ImagePath));
         }
 
         //fills tb_cart with items in cart
@@ -131,18 +116,7 @@ namespace FußballBestellung
 
             tb_cart.Text = list;
         }
-        void checkCountRange()
-        {
-            if (footballListCounter < 0)
-            {
-                footballListCounter = footballs.Count - 1;
-            }
-            if (footballListCounter > footballs.Count - 1)
-            {
-                footballListCounter = 0;
-            }
-        }
 
-
+        
     }
 }

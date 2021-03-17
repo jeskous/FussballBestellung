@@ -9,11 +9,13 @@ namespace FußballBestellung
     public class Football
     {
 
+        public int ID { get; set; }
         public string Name { get; set; }
         public int Size { get; set; }
         public string Brand { get; set; }
         public double Price { get; set; }
         public string ImagePath { get; set; }
+        public int Amount { get; set; }
 
 
         public Football(string name, int size, string brand, double price, string ImagePath)
@@ -23,6 +25,11 @@ namespace FußballBestellung
             this.Brand = brand;
             this.Price = price;
             this.ImagePath = ImagePath;
+            this.Amount = 0;
+        }
+        public Football()
+        {
+
         }
     }
 }

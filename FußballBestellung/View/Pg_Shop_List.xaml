@@ -25,26 +25,29 @@
             </StackPanel>
         </StackPanel>
         <ListView x:Name="CustomItems" Margin="269,87,10,58">
-            <ListView.ItemTemplate>
+            <ListView.ItemTemplate >
                 <DataTemplate>
                     <Grid Height="80" Width="500">
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="190" />
                             <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="200" />
-                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="40"/>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="Img_listBox" Grid.Column="0" Source=""/>
-                        <TextBlock Text="Ball" Foreground="Black" FontSize="14" Grid.Column="1" VerticalAlignment="center" Height="20" Margin="0,30" />
-                        <TextBlock Text="Marke" Foreground="Black" FontSize="14" Grid.Column="2" VerticalAlignment="center" Height="20" Margin="0,30" />
-                        <Button Grid.Column="3" Width="auto" Margin="0,5,0,45" Content="+1"/>
-                        <Button Grid.Column="3" Width="auto"  Content="-1" Margin="0,45,0,5"/>
+                        <Image x:Name="Img_listBox" Grid.Column="0" Source="{Binding ImagePath}"/>
+                        <TextBlock x:Name="tBlock_Name" Text="{Binding Name}" Foreground="Black" FontSize="14" Grid.Column="1" VerticalAlignment="center" Height="20" Margin="0,30" />
+                        <TextBlock Text="{Binding Brand}" Foreground="Black" FontSize="14" Grid.Column="2" VerticalAlignment="center" Height="20" Margin="0,30" />
+                        <TextBlock Text="{Binding Price}" Foreground="Black" FontSize="14" Grid.Column="3" VerticalAlignment="center" Height="20" Margin="0,30" />
+                        <Button Grid.Column="4" Width="auto" Margin="0,5,0,45" Content="+1" Click="ShopBtn_Add_Click"/>
+                        <TextBlock Text="{Binding Amount}" Foreground="Black" FontSize="14" Grid.Column="4" Margin="0,40,0,10" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
         </ListView>
 
-
+        
         <StackPanel Margin="269,87,10,58" Orientation="Horizontal" Background="White" Visibility="Hidden">
             <StackPanel>
                 <Image x:Name="img_productImage"  Height="273" Margin="0,0,50,0"></Image>
@@ -62,8 +65,6 @@
         </StackPanel>
         <Canvas>
             <Button x:Name="ShopBtn_Submit" Content="Order"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" Click="ShopBtn_Submit_Click" FontFamily="OCR A Extended" />
-            <Button x:Name="ShopBtn_Next" Content="Next"  Width="71" Height="28" Canvas.Left="344" Canvas.Top="397" Click="ShopBtn_Next_Click" FontFamily="OCR A Extended" />
-            <Button x:Name="ShopBtn_Previous" Content="Previous"  Width="71" Height="28" Canvas.Left="268" Canvas.Top="397" Click="ShopBtn_Previous_Click" FontFamily="OCR A Extended" />
         </Canvas>
     </Grid>
 </Page>
