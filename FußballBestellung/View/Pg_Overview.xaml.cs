@@ -70,12 +70,9 @@ namespace FußballBestellung
         }
         void displayCart()
         {
-            string list = "";
-            foreach (var item in cart)
-            {
-                list += item.Name + Environment.NewLine;
-            }
-            tb_cart.Text = list;
+
+            listView_cart.ItemsSource = null;
+            listView_cart.ItemsSource = cart;
             lbl_Cart_Price_Value.Content = $"{TotalPrice.ToString("C2")}";
         }
     }

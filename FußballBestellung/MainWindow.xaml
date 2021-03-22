@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FußballBestellung"
         WindowStartupLocation="CenterScreen"    
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="MainWindow" Loaded="Window_Loaded" Width="816" Height="488">
     <Grid>

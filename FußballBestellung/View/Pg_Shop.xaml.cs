@@ -48,7 +48,14 @@ namespace FußballBestellung
 
         private void ShopBtn_Submit_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
+            if (cart.Count != 0)
+            {
+                this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
+            }
+            else
+            {
+                MessageBox.Show("Bitte wählen Sie ein Produkt aus!");
+            }
         }
 
         private void ShopBtn_Add_Click(object sender, RoutedEventArgs e)

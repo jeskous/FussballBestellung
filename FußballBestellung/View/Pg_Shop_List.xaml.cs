@@ -51,7 +51,6 @@ namespace FußballBestellung
             }
 
             CustomItems.ItemsSource = shopItems;
-
         }
 
         //
@@ -60,23 +59,25 @@ namespace FußballBestellung
 
         private void ShopBtn_Add_Click(object sender, RoutedEventArgs e)
         {
-            //ToDo getSelected Football as index
-            cart.Add(footballs[0]);
-            totalPrice += footballs[0].Price;
+
+            var item = (sender as Button).DataContext;
+            int index = CustomItems.Items.IndexOf(item);
+
+            cart.Add(footballs[index]);
+            totalPrice += footballs[index].Price;
             displayCart();
             updateTotalPrice();
         }
         private void ShopBtn_Remove_Click(object sender, RoutedEventArgs e)
         {
-            //if (cart.Count > 0 && cart.Contains(footballs[footballListCounter]))
-            //{
-            //    var x = getSelectedItem();
-            //    cart.Remove(footballs[footballListCounter]);
-            //    lbl_ItemsInCart.Content = $"Items in Cart: {cart.Count}";
-            //    totalPrice -= footballs[footballListCounter].Price;
-            //    displayCart();
-            //    updateTotalPrice();
-            //}
+            var item = (sender as Button).DataContext;
+            int index = listView_cart.Items.IndexOf(item);
+
+            totalPrice -= cart[index].Price;
+            cart.Remove(cart[index]);
+            
+            displayCart();
+            updateTotalPrice();
         }
 
         //
@@ -84,7 +85,14 @@ namespace FußballBestellung
         //
         private void ShopBtn_Submit_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
+            if (cart.Count != 0)
+            {
+                this.NavigationService.Navigate(new Pg_Delivery(cart, totalPrice));
+            }
+            else
+            {
+                MessageBox.Show("Bitte wählen Sie ein Produkt aus!");
+            }              
         }
 
 
@@ -108,13 +116,8 @@ namespace FußballBestellung
         //fills tb_cart with items in cart
         void displayCart()
         {
-            string list = "";
-            foreach (var item in cart)
-            {
-                list += item.Name + Environment.NewLine;
-            }
-
-            tb_cart.Text = list;
+            listView_cart.ItemsSource = null;
+            listView_cart.ItemsSource = cart;
         }
 
         
