@@ -34,14 +34,14 @@ namespace FußballBestellung
         {
             InitializeComponent();
 
-            football1 = new Football("LGE Uniforia", 5, "Adidas", 18.70, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/adidas-lge-uniforia.png");
-            footballs.Add(football1);
-            football2 = new Football("68er Light Fussbal F126", 5, "Derbystar", 11.48, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/68er Light Fussbal F126.png");
-            footballs.Add(football2);
-            football3 = new Football("Tri Concept 2.0 Ultra", 5, "Uhlsport", 16.77, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/Tri Concept 2.0 Ultra Lite 290 Gramm F01.png");
-            footballs.Add(football3);
-            football4 = new Football("Senzor Lightball", 5, "Erima", 14.97, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/Senzor Lightball 350 Gramm.png");
-            footballs.Add(football4);
+            //football1 = new Football("LGE Uniforia", 5, "Adidas", 18.70, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/adidas-lge-uniforia.png");
+            //footballs.Add(football1);
+            //football2 = new Football("68er Light Fussbal F126", 5, "Derbystar", 11.48, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/68er Light Fussbal F126.png");
+            //footballs.Add(football2);
+            //football3 = new Football("Tri Concept 2.0 Ultra", 5, "Uhlsport", 16.77, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/Tri Concept 2.0 Ultra Lite 290 Gramm F01.png");
+            //footballs.Add(football3);
+            //football4 = new Football("Senzor Lightball", 5, "Erima", 14.97, Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName + "/Images/Senzor Lightball 350 Gramm.png");
+            //footballs.Add(football4);
 
             fillShopLabels(footballs[0]);
         }
@@ -114,7 +114,7 @@ namespace FußballBestellung
             lbl_Brand.Content = football.Brand;
             lbl_Name.Content = football.Name;
             lbl_Price.Content = $"{football.Price.ToString("C2")}";
-            img_productImage.Source = new BitmapImage(new Uri(football.ImagePath));
+            //img_productImage.Source = new BitmapImage(new Uri(football.ImagePath));
         }
 
         //fills tb_cart with items in cart

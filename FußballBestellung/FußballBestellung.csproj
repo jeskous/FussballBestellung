@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -128,7 +129,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -140,7 +141,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Include="Resources\adidas-lge-uniforia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\68er Light Fussbal F126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Senzor Lightball 350 Gramm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tri Concept 2.0 Ultra Lite 290 Gramm F01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
