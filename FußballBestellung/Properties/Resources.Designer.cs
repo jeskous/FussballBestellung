@@ -59,45 +59,5 @@ namespace FußballBestellung.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap _68er_Light_Fussbal_F126 {
-            get {
-                object obj = ResourceManager.GetObject("_68er_Light_Fussbal_F126", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap adidas_lge_uniforia {
-            get {
-                object obj = ResourceManager.GetObject("adidas_lge_uniforia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Senzor_Lightball_350_Gramm {
-            get {
-                object obj = ResourceManager.GetObject("Senzor_Lightball_350_Gramm", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Tri_Concept_2_0_Ultra_Lite_290_Gramm_F01 {
-            get {
-                object obj = ResourceManager.GetObject("Tri_Concept_2_0_Ultra_Lite_290_Gramm_F01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

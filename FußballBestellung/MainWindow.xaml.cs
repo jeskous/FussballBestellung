@@ -27,9 +27,6 @@ namespace FußballBestellung
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //old Version
-            //myFrame.Navigate(new Pg_Shop());
-
             //uncomment vor new Version v
             myFrame.Navigate(new Pg_Shop_List());
         }

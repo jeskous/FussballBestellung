@@ -30,7 +30,6 @@ namespace FußballBestellung
             this.Customer = customer;
             InitializeComponent();
 
-
         }
 
         private void Overview_btn_Cancel_Click(object sender, RoutedEventArgs e)
@@ -41,6 +40,21 @@ namespace FußballBestellung
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(Customer.FirstName);
+        }
+
+        private void starRating_rating_ValueChanged(object sender, Syncfusion.Windows.Controls.Input.ValueChangedEventArgs e)
+        {
+            submitRating(starRating_rating.Value);
+            starRating_rating.IsEnabled = false;
+        }
+
+        //
+        //Helper
+        //
+        void submitRating(double starRating)
+        {
+            //ToDo Bewertung bearbeiten
+            MessageBox.Show("Danke für deine Bewertung!");
         }
     }
 }

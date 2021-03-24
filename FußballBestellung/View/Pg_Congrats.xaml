@@ -1,28 +1,23 @@
-﻿<Page x:Class="FußballBestellung.Pg_Congrats"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="FußballBestellung.Pg_Congrats"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Pg_Congrats">
 
     <Grid Background="#FFB8B8B8">
 
-        <Label x:Name="lbl_title" Content="MyShop" FontFamily="OCR A Extended" FontSize="48" FontWeight="Bold">
-            <Label.Foreground>
-                <SolidColorBrush Color="Black"/>
-            </Label.Foreground>
-        </Label>
+        <Label x:Name="lbl_SubTitle" Content="Glückwunsch" FontFamily="OCR A Extended" FontSize="32" FontWeight="Bold" Margin="226,69,346,339" Foreground="Black"/>
 
-        <Label x:Name="lbl_SubTitle" Content="Glückwunsch" FontFamily="OCR A Extended" FontSize="32" FontWeight="Bold" Margin="224,153,348,255">
-            <Label.Foreground>
-                <SolidColorBrush Color="Black"/>
-            </Label.Foreground>
-        </Label>
+        <syncfusion:SfRating x:Name="starRating_rating"  ItemsCount="5" Height="37" Width="156" Canvas.Left="234" Canvas.Top="246" Margin="182,309,462,104" ValueChanged="starRating_rating_ValueChanged"/>
+        <Label x:Name="lbl_SubTitle_Copy" Content="Ihre Bestellung wurde abgesendet" FontFamily="OCR A Extended" FontSize="24" FontWeight="Bold" Margin="170,111,150,297" Foreground="Black"/>
+        <Label x:Name="lbl_SubTitle_Copy1" Content="Bestellvorgang bewerten" FontFamily="OCR A Extended" FontSize="16" FontWeight="Bold" Foreground="Black" Canvas.Left="170" Canvas.Top="263" Margin="182,279,385,146"/>
         <Canvas>
             <Button x:Name="Overview_btn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="Overview_btn_Cancel_Click"/>
         </Canvas>
-        <Label x:Name="lbl_SubTitle_Copy" Content="Ihre Bestellung wurde abgesendet" FontFamily="OCR A Extended" FontSize="24" FontWeight="Bold" Margin="168,195,152,213" Foreground="Black"/>
     </Grid>
 </Page>
