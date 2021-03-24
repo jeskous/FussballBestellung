@@ -38,7 +38,7 @@
                 </xctk:DropDownButton.DropDownContent>
             </xctk:DropDownButton>
             <TabControl x:Name="tabControl_Delivery" Height="252" Width="291" Canvas.Top="42">
-                <TabItem Header="TabItem">
+                <TabItem Header="TabItem" Visibility="Hidden">
                     <Canvas Background="#FFE5E5E5">
                         <Label Content="Name" Canvas.Left="10" Canvas.Top="10"/>
                         <TextBox x:Name="tb_LastName" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="36" Width="120"/>
@@ -78,6 +78,7 @@
         <Canvas>
             <Button x:Name="DeliveryBtn_Submit" Content="Next"  Width="108" Height="43" Canvas.Left="682" Canvas.Top="397" FontFamily="OCR A Extended" Click="DeliveryBtn_Submit_Click" RenderTransformOrigin="0.623,0.806" />
             <Button x:Name="DeliveryBtn_Cancel" Content="Back"  Width="75" Height="30" Canvas.Left="602" Canvas.Top="404" FontFamily="OCR A Extended" Click="DeliveryBtn_Cancel_Click" />
+
         </Canvas>
     </Grid>
 </Page>

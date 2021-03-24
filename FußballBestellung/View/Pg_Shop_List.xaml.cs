@@ -120,6 +120,17 @@ namespace FußballBestellung
             listView_cart.ItemsSource = cart;
         }
 
-        
+        private void ShopBtn_CheckPrice_Click(object sender, RoutedEventArgs e)
+        {
+            if(Calc_Calculator.Visibility == Visibility.Visible)
+            {
+                Calc_Calculator.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                Calc_Calculator.Visibility = Visibility.Visible;
+            }
+            
+        }
     }
 }
