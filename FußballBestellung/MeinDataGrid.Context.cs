@@ -26,5 +26,6 @@ namespace FußballBestellung
         }
     
         public virtual DbSet<Table_Footballs> Table_Footballs { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
     }
 }

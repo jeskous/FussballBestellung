@@ -119,6 +119,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Customer.cs">
+      <DependentUpon>MeinDataGrid.tt</DependentUpon>
+    </Compile>
     <Compile Include="MeinDataGrid.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,7 +137,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MeinDataGrid.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\PaymentMethod.cs" />
     <Compile Include="Table_Footballs.cs">
       <DependentUpon>MeinDataGrid.tt</DependentUpon>

@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace FußballBestellung
     /// </summary>
     public partial class Pg_Delivery : Page
     {
-
+        JuhuuEntities Entities = new JuhuuEntities();
         List<Customer> CustomersList = new List<Customer>();
         List<Football> cart = new List<Football>();
         double TotalPrice;
@@ -68,11 +69,13 @@ namespace FußballBestellung
                 tb_Street.Text,
                 Convert.ToInt32(tb_HouseNumber.Text),
                 Convert.ToInt32(tb_Postal.Text),
-                tb_City.Text,
-                ColorPicker_color.Color);
+                tb_City.Text);
+                //ColorPicker_color.Color);
 
                 //ToDO Wenn Customer noch nicht vorhanden neu erstellen
-                CustomersList.Add(customer);
+                Entities.Customer.Add(customer);
+                Entities.SaveChangesAsync();
+
 
                 this.NavigationService.Navigate(new Pg_Payment(cart, customer, TotalPrice));
             }
@@ -91,11 +94,16 @@ namespace FußballBestellung
         {
             //ToDo Liste Von Nutzern Laden und nicht immer neu erstellen
 
-            Customer customer1 = new Customer("Latte", "Andi", "0171 22445", "Musterstraße", 4, 69420, "LA");
-            CustomersList.Add(customer1);
-
-            Customer customer2 = new Customer("Zufall", "Rainer", "0171 22445", "Musterstraße", 5, 69420, "LA");
-            CustomersList.Add(customer2);
+            foreach(var customer in Entities.Customer)
+            {
+                CustomersList.Add(new Customer(customer.LastName,
+                                                customer.FirstName,
+                                                customer.Phone,
+                                                customer.Street,
+                                                customer.HouseNumber,
+                                                customer.Postal,
+                                                customer.City));
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

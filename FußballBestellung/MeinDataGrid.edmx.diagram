@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="e49742b2078d41e6b00b4b61cdcffeca" Name="Diagram1">
         <EntityTypeShape EntityType="JuhuuModel.Table_Footballs" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JuhuuModel.Customer" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

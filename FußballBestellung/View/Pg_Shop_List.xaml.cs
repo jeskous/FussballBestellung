@@ -94,6 +94,8 @@ namespace FußballBestellung
 
         void InitFootballList()
         {
+            
+
             //fill footballs list from database
             foreach(var Ball in Entities.Table_Footballs)
             {

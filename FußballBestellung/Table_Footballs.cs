@@ -20,5 +20,6 @@ namespace FußballBestellung
         public string Brand { get; set; }
         public Nullable<double> Price { get; set; }
         public Nullable<decimal> Amount { get; set; }
+        public string ImagePath { get; set; }
     }
 }

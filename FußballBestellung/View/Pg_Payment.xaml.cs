@@ -52,7 +52,7 @@ namespace FußballBestellung
 
 
                     //ToDo eventuell verschönern und in klassen einbauen
-                    Customer.chosenPayment = "PayPal";
+                    Customer.ChosenPayment = "PayPal";
 
                     this.NavigationService.Navigate(new Pg_Overview(cart, Customer, TotalPrice));
                 }                
@@ -71,7 +71,7 @@ namespace FußballBestellung
                     Customer.BankAccount.AccountName = tb_AccountName.Text;
 
                     //ToDo eventuell verschönern und in klassen einbauen
-                    Customer.chosenPayment = "Bank Account";
+                    Customer.ChosenPayment = "Bank Account";
 
                     this.NavigationService.Navigate(new Pg_Overview(cart, Customer, TotalPrice));
                 }

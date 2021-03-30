@@ -20,7 +20,6 @@ namespace FußballBestellung
     /// </summary>
     public partial class Pg_Overview : Page
     {
-
         List<Football> cart = new List<Football>();
         Customer Customer;
         double TotalPrice;
@@ -59,7 +58,7 @@ namespace FußballBestellung
             lbl_HouseNumber_Value.Content = Customer.HouseNumber;
             lbl_Postal_Value.Content = Customer.Postal;
             lbl_City_Value.Content = Customer.City;
-            if(Customer.chosenPayment == "PayPal")
+            if(Customer.ChosenPayment == "PayPal")
             {
                 lbl_PaymentMethod_Value.Content = Customer.Paypal.MethodName;
             }
