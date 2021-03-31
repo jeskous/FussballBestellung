@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace FußballBestellung
     /// </summary>
     public partial class Pg_Overview : Page
     {
+        JuhuuEntities Entities = new JuhuuEntities();
         List<Football> cart = new List<Football>();
         Customer Customer;
         double TotalPrice;
@@ -37,6 +39,49 @@ namespace FußballBestellung
 
         private void Overview_btn_Submit_Click(object sender, RoutedEventArgs e)
         {
+
+            bool exists = false;
+            foreach (var cus in Entities.Customer)
+            {
+                if (cus.FirstName == Customer.FirstName && cus.LastName == Customer.LastName)
+                {
+                    exists = true;
+                }
+            }
+            if (!exists)
+            {
+
+                try
+                {
+
+                    //ToDo Fix add new customer to DB
+
+                    List<string> IDList = new List<string>();
+                    foreach (var cus in Entities.Customer)
+                    {
+                        IDList.Add(cus.ID);
+                    }
+
+                    int newID = Convert.ToInt32(IDList[IDList.Count - 1]) + 1;
+
+                    Customer.ID = newID.ToString();
+
+
+                    Entities.Customer.Add(Customer);
+                    Entities.SaveChangesAsync();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
+            }
+
             this.NavigationService.Navigate(new Pg_Congrats(cart, Customer));
         }
 

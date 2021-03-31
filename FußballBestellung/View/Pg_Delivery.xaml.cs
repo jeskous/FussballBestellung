@@ -71,21 +71,6 @@ namespace FußballBestellung
                 Convert.ToInt32(tb_Postal.Text),
                 tb_City.Text);
                 //ColorPicker_color.Color);
-                bool exists = false;
-                foreach(var cus in Entities.Customer)
-                {
-                    if(cus.FirstName == customer.FirstName && cus.LastName == customer.LastName)
-                    {
-                        exists = true;
-                    }
-                }
-                if (!exists)
-                {
-                    //ToDo Fix add new customer to DB
-                    Entities.Customer.Add(customer);
-                    Entities.SaveChangesAsync();
-                }
-
 
 
                 this.NavigationService.Navigate(new Pg_Payment(cart, customer, TotalPrice));
